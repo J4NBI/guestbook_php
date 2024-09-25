@@ -15,11 +15,11 @@
         <h1 class="guestbook-heading">GUESTBOOK</h1>
         <form class="container" id="guest-form" action="/" method="GET">
             <label for="name">What is your name?</label>
-            <input type="text">
+            <input type="text" id="name" name="name">
             <label for="title">Please enter a title:</label>
-            <input type="text">
-            <label for="comment">Please enter your comment:</label>
-            <textarea name="comment" id="comment"></textarea>
+            <input type="text" id="title" name="title">
+            <label for="content">Please enter your comment:</label>
+            <textarea name="comment" id="content" name="content"></textarea>
             <div class="btn-container">
                 <button type="reset"><i class="fa-solid fa-x"></i>cancel</button>
                 <button type="submit"><i class="fa-solid fa-check"></i>Submit</button>
@@ -40,7 +40,7 @@
             <div class="post">
                 <div class="post-head">
                     <div class="head-left">
-                        <h6>Jane Doe</h6>
+                        <h6>Jane Doe Lorem</h6>
                         <p> 12 hours ago</p>
                     </div>
                     <div class="head-right">
@@ -76,16 +76,6 @@
                 </div>
             </div>
         </article>
-
-            
-
-            
-
-            
-
-            
-
-        
     </main>
 
 </body>
