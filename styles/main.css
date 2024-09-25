@@ -1,0 +1,170 @@
+/* ---------
+    RESET
+----------*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ---------
+    MAIN
+----------*/
+html {
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: #fffcf7;
+    height: 100vh;
+    
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    width: 80%;
+
+}
+
+/* ------------
+    GUESTBOOK
+-------------*/
+
+.guestbook-heading {
+    color: #e97200;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    letter-spacing: 0.1em;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+/* ------------
+    FORM
+-------------*/
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+label {
+   color:rgba(128, 128, 128, 0.5);
+}
+
+textarea {
+    height: 100px;
+    border-radius: 5px;
+    padding: 10px 10px;
+}
+input {
+    height: 30px;
+    border-radius: 5px;
+    border: 0.5px solid rgba(128, 128, 128, 0.5);
+    margin-bottom: 1rem;
+    padding: 10px 10px;
+}
+
+i {
+    padding-right: 0.5rem;
+}
+
+/* ------------
+    BUTTONs
+-------------*/
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 20px 10px;
+}
+
+button {
+    font-size: 0.5rem;
+    font-weight: 200;
+    color: white;
+    background-color: #e97200 ;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 30px;
+    transition: 0.3s ease-in-out;
+}
+
+.posts-btn-container {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+}
+
+
+.posts-btn-container-btn {
+    align-self: start;
+}
+
+.posts-btn {
+    margin-top: 10px;
+    padding: 5px 10px;
+}
+
+button:hover, button:active {
+    background-color: hsla(1, 10%, 10%, 70%);
+    transform: scale(110%);
+}
+
+/* ---------------
+    SECTION POSTS
+-----------------*/
+
+
+.posts {
+    font-size: 0.6rem;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid hsla(1, 10%, 10%, 10%);
+    padding: 20px 20px;
+    line-height: 1.6;
+    align-self: center;
+    margin: 0.5rem 0rem;
+}
+
+.post-head {
+    display: flex;
+    justify-content: space-between;
+}
+
+.head-left {
+    display: flex;
+    gap: 1rem;
+}
+
+
+h3 {
+    font-size: 0.8rem;
+    color: #e97200;
+    margin: 0.5rem 0rem;
+}
+
+h6 {
+    font-size: 0.6rem;
+}
+
+.head-right p {
+    color:#e97200;
+    font-weight: 600;
+}
+
+.head-left p {
+    opacity: 0.3;
+}
