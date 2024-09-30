@@ -4,7 +4,7 @@ require_once __DIR__ . '/inc/db-connect.php';
 require_once __DIR__ . '/inc/functions.php';
 
 
-if (!empty($_POST['name']) && !empty($_POST['title']) && !empty($_POST['content'])) {
+if (!empty($_POST) && !empty($_POST['content'])) {
   $name = e($_POST['name'] ? : "");
   $title = e($_POST['title'] ? : "");
   $content = e($_POST['content'] ? : "");

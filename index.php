@@ -31,7 +31,6 @@ $stmt->bindValue('offset', ($currentPage - 1) * $pagination, PDO::PARAM_INT);
 $stmt->execute();
 $entries = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-
 // 
 
 require __DIR__ . '/views/index-view.php';

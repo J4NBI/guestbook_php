@@ -22,7 +22,7 @@
             <label for="title">Please enter a title:</label>
             <input type="text" id="title" name="title" required>
             <label for="content">Please enter your comment:</label>
-            <textarea name="comment" id="content" name="content" required></textarea>
+            <textarea id="content" name="content" required></textarea>
             <div class="btn-container">
                 <button type="reset"><i class="fa-solid fa-x"></i>cancel</button>
                 <button type="submit"><i class="fa-solid fa-check"></i>Submit</button>
@@ -50,7 +50,10 @@
                     <div class="post-head">
                         <div class="head-left">
                             <h6><?php echo e($e['name'])?></h6>
-                            <p> 12 hours ago</p>
+                            <p> <?php 
+                                    echo createDateDifference($e['date']);
+                                ?>
+                            </p>
                         </div>
                         <div class="head-right">
                             <p><?php echo e($e['date'])?></p>
