@@ -12,11 +12,13 @@
 ----------*/
 html {
     font-family: 'Montserrat', sans-serif;
+    line-height: 1.6em;
 }
 
 body {
     background-color: #fffcf7;
     height: 100vh;
+    
     
 }
 
@@ -30,6 +32,11 @@ main {
     width: 80%;
     max-width: 600px;
 
+}
+
+.post-body > p {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 /* ------------
@@ -177,4 +184,34 @@ h6 {
 
 .head-left p {
     opacity: 0.3;
+}
+
+/* ------------------
+    PAGINATION LINKS
+--------------------*/
+#pagination {
+    margin: 20px 0px;
+    display: flex;
+    gap: 3px;
+    
+}
+
+#pagination li {
+    list-style-type: none;
+    
+}
+
+#pagination a {
+    display: block;
+    border-radius: 3px;
+    padding: 0.5rem 15px;
+    background-color: #e97200;
+    text-decoration: none;
+    color: white;
+}
+
+#pagination a:hover {
+
+    background-color: hsla(1, 10%, 10%, 70%);
+    transform: scale(110%);
 }

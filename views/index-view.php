@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles/mains.css" />
+    <link rel="stylesheet" type="text/css" href="./styles/lib/montserrat/webfonts/Montserrat.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Gästebuch</title>
+</head>
+<body>
+    <main>
+        <h1 class="guestbook-heading">GUESTBOOK</h1>
+            <?php if (!empty($errorMessage)):?>
+                <p><?php echo $errorMessage?></p>
+            <?php endif; ?>
+        <form class="container" id="guest-form" action="submit.php" method="POST">
+            <label for="name">What is your name?</label>
+            <input type="text" id="name" name="name" required>
+            <label for="title">Please enter a title:</label>
+            <input type="text" id="title" name="title" required>
+            <label for="content">Please enter your comment:</label>
+            <textarea name="comment" id="content" name="content" required></textarea>
+            <div class="btn-container">
+                <button type="reset"><i class="fa-solid fa-x"></i>cancel</button>
+                <button type="submit"><i class="fa-solid fa-check"></i>Submit</button>
+            </div>
+        </form>
+
+        <hr class="container">
+
+        <!-- PHP PAGINATION -->
+       
+        <ul id="pagination">
+            <?php 
+                for ($i = 1; $i <= $pages; $i++):?>
+                <li><a href="index.php?<?php echo http_build_query(['page' => $i])?>"><?php echo $i;?></a></li>
+            <?php endfor?>
+        </ul>
+
+        <!-- ENTRIES -->
+
+        <?php foreach ($entries AS $e):?>
+
+            <article class="posts container">
+
+                <div class="post">
+                    <div class="post-head">
+                        <div class="head-left">
+                            <h6><?php echo e($e['name'])?></h6>
+                            <p> 12 hours ago</p>
+                        </div>
+                        <div class="head-right">
+                            <p><?php echo e($e['date'])?></p>
+                        </div>
+                    </div>
+
+                    <div class="post-body">
+                        <h3><?php echo e($e['title'])?></h3>
+
+                    <!-- CREATE PARASGRAPHS  -->
+                    
+                        <?php
+                            $paragraphs = explode("\n", $e['content']);
+                            $filteredParagraphs = [];
+                            foreach ($paragraphs AS $paragraph) {
+                                $paragraph = trim($paragraph);
+                                if (strlen($paragraph) > 0) {
+                                    $filteredParagraphs[] = $paragraph;
+                                }
+                            }
+                        ?>
+
+                        <?php foreach($filteredParagraphs AS $p): ?>
+                            <p><?php echo e($p);?></p>
+                        <?php endforeach; ?>
+
+                    </div>
+                </div>
+            </article>
+        <?php endforeach ?>
+    </main>
+
+</body>
+</html>
