@@ -215,3 +215,9 @@ h6 {
     background-color: hsla(1, 10%, 10%, 70%);
     transform: scale(110%);
 }
+
+/* CONTENT FONT SIZE */
+
+.para,h3 {
+    font-size: 1rem!important;
+}
