@@ -17,6 +17,7 @@ function createDateDifference($date){
     $months = $interval->m;
     $days = $interval->d;
     $hours = $interval->h;
+    $hours -= 2; // ZEITVERSCHIEBUNG SERVER
     $minutes = $interval->i;
   
     $output = [];
