@@ -32,13 +32,25 @@
         <hr class="container">
 
         <!-- PHP PAGINATION -->
-       
+        <?php $getPage = $_GET['page'] ?? 1;?>
+        <?php if ($getPage < 1) $getPage = 1 ?>
+        <?php if ($getPage >= $pages) $getPage = $pages -1 ?>
         <ul id="pagination">
+        <a href="index.php?page=<?php echo ($getPage === 1) ? 1 : ($getPage - 1) ?>" ><</a>
+            
             <?php 
-                for ($i = 1; $i <= $pages; $i++):?>
+                
+                $paginationCount = ($getPage+2) ?? 0;
+                if (($getPage+2) >= $countEntries){
+                    $paginationCount = $countEntries;
+                }
+                for ($i = ($getPage); $i <= ($getPage +2) ; $i++):?>
                 <li><a href="index.php?<?php echo http_build_query(['page' => $i])?>"><?php echo $i;?></a></li>
             <?php endfor?>
+        
+            <a href="index.php?page=<?php echo ($getPage+1);?>">></a>
         </ul>
+                    
 
         <!-- ENTRIES -->
 

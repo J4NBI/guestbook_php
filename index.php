@@ -13,7 +13,7 @@ $countEntries = $stmt->fetch(PDO::FETCH_ASSOC);
 $countEntries = $countEntries['count'];
 
 $currentPage = max(1, @(int) ($_GET['page'] ?? 1));
-$pagination = 4;
+$pagination = 2;
 $pages = 0;
 
 if ($countEntries === 0){
